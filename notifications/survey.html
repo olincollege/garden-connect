@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<form action="process.py" method="post" role="form">
+    <h1>Python Survey</h1>
+
+    <div class="field">
+        <p>Which plant are you interested in?</p>
+        <div class="control">
+            <label class="radio">
+                <input type="radio" name="plants_interest" value="Cucumber">
+                Cucumber
+            </label>
+            <label class="radio">
+                <input type="radio" name="plants_interest" value="Kale">
+                Kale
+            </label>
+            <label class="radio">
+                <input type="radio" name="plants_interest" value="Tomato">
+                Tomato
+            </label>
+            <label class="radio">
+                <input type="radio" name="plants_interest" value="Basil">
+                Basil
+            </label>
+        </div>
+    </div>
+
+    <div class="field">
+        <p>Do you plan to have a garden inside or outside?</p>
+        <div class="control">
+            <label class="radio">
+                <input type="radio" name="garden_location" value="inside">
+                Inside
+            </label>
+            <label class="radio">
+                <input type="radio" name="garden_location" value="outside">
+                Outside
+            </label>
+        </div>
+    </div>
+
+    <div class="field">
+        <p>What time of day (0-23) is best for watering your plants?</p>
+        <div class="control">
+            <input type="text" name="watering_time">
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="control">
+            <input type="submit" value="Submit" class="button is-primary">
+        </div>
+    </div>
+</form>
+
+
+</html>
