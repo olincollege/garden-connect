@@ -114,6 +114,45 @@ def NewPost(request):
 
 	return render(request, 'newpost.html', context)
 
+
+@login_required
+def NewPlant(request):
+	user = request.user
+	tags_objs = []
+	files_objs = []
+
+	if request.method == 'POST':
+		form = NewPostForm(request.POST, request.FILES)
+		if form.is_valid():
+			files = request.FILES.getlist('content')
+			caption = form.cleaned_data.get('caption')
+			tags_form = form.cleaned_data.get('tags')
+
+			tags_list = list(tags_form.split(','))
+
+			for tag in tags_list:
+				t, created = Tag.objects.get_or_create(title=tag)
+				tags_objs.append(t)
+
+			for file in files:
+				file_instance = PostFileContent(file=file, user=user)
+				file_instance.save()
+				files_objs.append(file_instance)
+
+			p, created = Post.objects.get_or_create(caption=caption, user=user)
+			p.tags.set(tags_objs)
+			p.content.set(files_objs)
+			p.save()
+			return redirect('index')
+	else:
+		form = NewPostForm()
+
+	context = {
+		'form':form,
+	}
+
+	return render(request, 'newplant.html', context)
+
 def tags(request, tag_slug):
 	tag = get_object_or_404(Tag, slug=tag_slug)
 	posts = Post.objects.filter(tags=tag).order_by('-posted')
