@@ -222,3 +222,18 @@ def follow(request, username, option):
 		return HttpResponseRedirect(reverse('profile', args=[username]))
 	except User.DoesNotExist:
 		return HttpResponseRedirect(reverse('profile', args=[username]))
+	
+def explore(request):
+	return render(request, 'explore.html')
+
+def cucumber(request):
+	return render(request, 'cucumber.html')
+
+def lettuce(request):
+	return render(request, 'lettuce.html')
+
+def tomato(request):
+	return render(request, 'tomato.html')
+
+def kale(request):
+	return render(request, 'jalepenos.html')

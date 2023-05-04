@@ -151,7 +151,7 @@ def NewPlant(request):
 		'form':form,
 	}
 
-	return render(request, 'newplant.html', context)
+	return render(request, 'survey.html', context)
 
 def tags(request, tag_slug):
 	tag = get_object_or_404(Tag, slug=tag_slug)
