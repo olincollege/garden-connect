@@ -45,6 +45,10 @@ python manage.py migrate
 * Please be patient while you wait for all of the dependencies to load
 * After the dependencies have finished loading, type the command
 ```
+python manage.py migrate --run-syncdb
+```
+* Then use the following command
+```
 python manage.py runserver
 ```
 * A local IP address should load where you may copy it and paste it into your web browser
