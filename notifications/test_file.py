@@ -1,3 +1,6 @@
+"""
+Mock test for watering reminder feature
+"""
 from watering import WateringReminder
 
 # from plant_interest_survey import PlantInterest

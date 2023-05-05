@@ -35,7 +35,7 @@
           Home
         </a>
 
-        <a class="navbar-item">
+        <a href="{% url 'explore' %}" class="navbar-item">
           <i class="material-icons">explore</i>
           Explore
         </a>
@@ -64,6 +64,11 @@
         <a href="{% url 'newpost' %}" class="navbar-item">
           <i style="color: green;" class="material-icons">perm_media</i>
           <strong>New Post</strong>
+        </a>
+
+        <a href="{% url 'plant_signup' %}" class="navbar-item">
+          <i style="color: green;" class="material-icons">perm_media</i>
+          <strong>New Plant</strong>
         </a>
 
         <div class="navbar-item has-dropdown is-hoverable">

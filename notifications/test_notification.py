@@ -1,9 +1,87 @@
+<<<<<<< HEAD
 from plant_interest_survey import PlantInterest
+=======
+"""
+Tests cases for plant interest survey
+"""
+from plant_interest_survey import PlantInterest # pylint: disable=E0401
+from watering import WateringReminder
+from time_storage import Time
+import pytest
+>>>>>>> 5142219da7458b77b3fd93c19bfc583647b05ce4
 
 ##### Test Cases ######
 
 
+<<<<<<< HEAD
 ####### Test That Message is Being Generated Correctly ########
+=======
+interest = PlantInterest()
+watering = WateringReminder()
+time = Time()
+
+### Tetst Cases ###
+
+# Testing weather correct amount of water is being ouputted based on provided constants
+time_to_water_cases = [
+    # Plant that needs to be watered twise is watered twise
+    # based on day that person registered for notifications
+    (
+        ["Kale", watering.time_to_water()], # pylint: disable=E1120
+        [time.weekday_tracker(), (time.weekday_tracker() + 3)],
+    ),
+    # Plant that needs to be watered 3 times is getting watered
+    # 3 times based on day that person registered for notifications
+    (
+        ["Cucumber", watering.time_to_water()], # pylint: disable=E1120
+        [
+            time.weekday_tracker(),
+            (time.weekday_tracker() + 2),
+            (time.weekday_tracker() + 4),
+        ],
+    ),
+    #  Plant that needs to be watered 4 times is getting watered
+    # 3 times based on day that person registered for notifications
+    (
+        ["Basil", watering.time_to_water()], # pylint: disable=E1120
+        [
+            time.weekday_tracker(),
+            (time.weekday_tracker() + 2),
+            (time.weekday_tracker() + 4),
+            (time.weekday_tracker() + 6),
+        ],
+    ),
+    #  Plant that needs to be watered 7 times is getting watered
+    # 3 times based on day that person registered for notifications
+    (
+        ["Tomato", watering.time_to_water()], # pylint: disable=E1120
+        [
+            time.weekday_tracker(),
+            (time.weekday_tracker() + 1),
+            (time.weekday_tracker() + 2),
+            (time.weekday_tracker() + 3),
+            (time.weekday_tracker() + 4),
+            (time.weekday_tracker() + 5),
+            (time.weekday_tracker() + 6),
+        ],
+    ),
+]
+
+generate_message_cases = [
+    ("Tomato", "It's time to check your Tomato"),
+    ("Kale", "It's time to check your Kale"),
+    ("Cucumber", "It's time to check your Cucumber"),
+    ("Basil", "It's time to check your Basil"),
+]
+
+correct_weekday_message_cases = []
+
+get_plant_cases = []
+
+garden_location_cases = []
+
+get_watering_time = []
+>>>>>>> 5142219da7458b77b3fd93c19bfc583647b05ce4
 
 
 def test_get_plant_ineterest(monkeypatch):

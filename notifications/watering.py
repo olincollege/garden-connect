@@ -1,6 +1,8 @@
-"""jhgfj"""
+"""
+Implementation of the watering schedule to follow for a plant
+"""
 from datetime import datetime
-from plant_interest_survey import PlantInterest
+from plant_interest_survey import PlantInterest # pylint: disable=E0401
 
 plant = PlantInterest.get_plants_interest
 
@@ -30,7 +32,7 @@ class WateringReminder:
             Generates a message to remind the user to water their plant at the preferred watering time.
     """
 
-    # Dictinoary of plants linked to the number of times they need to be checked per week
+    # Dictionary of plants linked to the number of times they need to be checked per week
     _plant_water_per_week = {
         "Kale": 2,
         "Cucumber": 3,
@@ -157,7 +159,12 @@ class WateringReminder:
 
     def generate_message(self):
         """
+<<<<<<< HEAD
         Generates a message to be prited to remimd user to water their plant
+=======
+        Outputs a formatted message for appropriate conditioning
+        of a plant
+>>>>>>> 5142219da7458b77b3fd93c19bfc583647b05ce4
         """
         if self.time_tracker_weekday() in self.days_to_water:
             if self.time_tracker_hour() == self.preferred_watering_time:
