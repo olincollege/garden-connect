@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE HTML>
+<html>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h1>Become the best gardener that you can be</h1>
+						</header>
+						<p>Whether you’re tired of running to the store for tomatoes or want to grow flowers to beautify
+							your home, there are many benefits to learning how to garden. Proper tactics for nurturing
+							plant life can save you time and money, and also become a highly-enjoyable hobby. If you’re
+							starting with nothing, you may ask, “How can I learn gardening?” It does not require any
+							special kind of person — just practice, supplies, and knowledge. </p>
+					</div>
+
+					<!-- Section -->
+					<section>
+						<div class="features">
+							<article>
+								<span class="icon fa-gem"></span>
+								<div class="content">
+									<h3>Cucumbers</h3>
+									<p>Cucumbers are a fun crop to incorporate in your garden or simply in large pots.
+										There
+										are
+										two main types of cucumbers, vining and bush cucumbers, both of which
+										consistently
+										grow
+										cucumbers throughout the entire growing season. If you're growing a vining
+										variety,
+										make
+										sure to also buy a trellis (or grow it near a slotted fence!) for it to grow on,
+										but
+										bush varieties should probably be planted in actual garden beds. Make sure to
+										regularly
+										harvest the cucumbers and water them frequently, but there are tons of different
+										ways
+										you'll be able to use them!</p>
+								</div>
+								<ul class="actions">
+									<li><a href="{% url 'cucumber' %}" class="button">More</a></li>
+								</ul>
+							</article>
+							<article>
+								<span class="icon solid fa-paper-plane"></span>
+								<div class="content">
+									<h3>Jalapenos</h3>
+									<p>Jalapenos are a great crop that can add a little spice to your summertime dishes!
+										Only
+										needing a pot or two, jalapenos love the heat and actually prefer being a bit
+										dry,
+										so
+										they are relatively low maintenance and are just fun, versatile plants!</p>
+								</div>
+								<ul class="actions">
+									<li><a href="{% url 'cucumber' %}" class="button">More</a></li>
+								</ul>
+							</article>
+							<article>
+								<span class="icon solid fa-rocket"></span>
+								<div class="content">
+									<h3>Lettuce</h3>
+									<p>Water: medium. maintenance: low. sun: 6-8 direct. space, 20+ square feet
+										Lettuce is a great summertime crop that requires a bit of space but is easy to
+										grow
+										and
+										can be a great part of tons of fresh recipes! Pests can be a problem, so make
+										sure
+										you
+										choose a variety that is pest resistant and make sure that you have raised bed
+										gardens
+										or a fence to keep out rabbits and other rodents!</p>
+								</div>
+								<ul class="actions">
+									<li><a href="{% url 'lettuce' %}" class="button">More</a></li>
+								</ul>
+							</article>
+							<article>
+								<span class="icon solid fa-signal"></span>
+								<div class="content">
+									<h3>Tomatoes</h3>
+									<p>Tomatoes are a staple in any summer garden. With tons of varieties, tomatoes are
+										a
+										versatile crop that come in tons of different sizes, flavors, and even colors!
+										While
+										you
+										should spend time researching which variety works best for what you want, no
+										matter
+										which variety you get, make sure they stay well watered and have at least a
+										couple
+										of
+										square feet in the sun so that they produce as much as possible!</p>
+								</div>
+								<ul class="actions">
+									<li><a href="{% url 'tomato' %}" class="button">More</a></li>
+								</ul>
+							</article>
+						</div>
+					</section>
+
+
+			</div>
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
+
+{% endblock %}

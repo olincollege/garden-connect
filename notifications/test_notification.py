@@ -1,4 +1,7 @@
-from plant_interest_survey import PlantInterest
+"""
+Tests cases for plant interest survey
+"""
+from plant_interest_survey import PlantInterest # pylint: disable=E0401
 from watering import WateringReminder
 from time_storage import Time
 import pytest
@@ -17,13 +20,13 @@ time_to_water_cases = [
     # Plant that needs to be watered twise is watered twise
     # based on day that person registered for notifications
     (
-        ["Kale", watering.time_to_water()],
+        ["Kale", watering.time_to_water()], # pylint: disable=E1120
         [time.weekday_tracker(), (time.weekday_tracker() + 3)],
     ),
     # Plant that needs to be watered 3 times is getting watered
     # 3 times based on day that person registered for notifications
     (
-        ["Cucumber", watering.time_to_water()],
+        ["Cucumber", watering.time_to_water()], # pylint: disable=E1120
         [
             time.weekday_tracker(),
             (time.weekday_tracker() + 2),
@@ -33,7 +36,7 @@ time_to_water_cases = [
     #  Plant that needs to be watered 4 times is getting watered
     # 3 times based on day that person registered for notifications
     (
-        ["Basil", watering.time_to_water()],
+        ["Basil", watering.time_to_water()], # pylint: disable=E1120
         [
             time.weekday_tracker(),
             (time.weekday_tracker() + 2),
@@ -44,7 +47,7 @@ time_to_water_cases = [
     #  Plant that needs to be watered 7 times is getting watered
     # 3 times based on day that person registered for notifications
     (
-        ["Tomato", watering.time_to_water()],
+        ["Tomato", watering.time_to_water()], # pylint: disable=E1120
         [
             time.weekday_tracker(),
             (time.weekday_tracker() + 1),

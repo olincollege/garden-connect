@@ -1,18 +1,30 @@
+"""
+Creates the view canvas for direct messaging between users
+"""
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
-from notifications.models import Notification, PlantInterest
-from notifications.forms import PlantForm
-from django.contrib.auth.models import User
+from notifications.models import Notification # pylint: disable=E0401
+from notifications.forms import PlantForm # pylint: disable=E0401
 
 # Create your views here.
 
 
-def ShowNotifications(request):
+def show_notifications(request):
+    """
+    Establishes the notifications meant to be displayed to
+    a user
+    Args:
+		request: An http GET request when a user would like
+		to access the page
+    Returns:
+		An http response with a dictionary containing all of
+        the notifications that were not cleared
+    """
     user = request.user
-    notifications = Notification.objects.filter(user=user).order_by("-date")
-    Notification.objects.filter(user=user, is_seen=False).update(is_seen=True)
+    notifications = Notification.objects.filter(user=user).order_by("-date") # pylint: disable=E1101
+    Notification.objects.filter(user=user, is_seen=False).update(is_seen=True) # pylint: disable=E1101
 
     template = loader.get_template("notifications.html")
 
@@ -23,47 +35,57 @@ def ShowNotifications(request):
     return HttpResponse(template.render(context, request))
 
 
-def DeleteNotification(request, noti_id):
+def delete_notification(request, noti_id):
+    """
+    Deletes a given notification
+    Args:
+		request: An http GET request when a user would like
+		to access the page
+        noti_id: A string linking to a specific notification
+    Returns:
+		A redirection to the notification page without the
+        selected notification
+    """
     user = request.user
-    Notification.objects.filter(id=noti_id, user=user).delete()
+    Notification.objects.filter(id=noti_id, user=user).delete() # pylint: disable=E1101
     return redirect("show-notifications")
 
 
-def CountNotifications(request):
-    count_notifications = 0
+def CountNotifications(request): # pylint: disable=C0103
+    """
+    Counts the number of of unread notifications
+    Args:
+		request: An http GET request when a user would like
+		to access the page
+    Returns:
+		A dictionary with the number of unread notifications
+    """
+    count_notifications_index = 0
     if request.user.is_authenticated:
-        count_notifications = Notification.objects.filter(
+        count_notifications_index = Notification.objects.filter( # pylint: disable=E1101
             user=request.user, is_seen=False
         ).count()
 
-    return {"count_notifications": count_notifications}
-
-
-def Survey(request):
-    user = request.user
-    template = loader.get_template("survey.html")
-    interest_form = PlantInterest
-    plant = interest_form.get_plants_interest
-    garden_location = interest_form.get_garden_location
-    time = interest_form.get_watering_time
-    context = {"plant": plant, "location": garden_location, "hour": time}
-    return HttpResponse(template.render(context, request))
+    return {"count_notifications": count_notifications_index}
 
 def plant_signup(request):
-	if request.method == 'POST':
-		form = PlantForm(request.POST)
-		if form.is_valid():
-			interest = form.cleaned_data.get('interest')
-			location = form.cleaned_data.get('location')
-			time = form.cleaned_data.get('time')
-			# notify = GardenNotification()
-            #             notify.save()
-			return redirect('index')
-	else:
-		form = PlantForm()
-	
-	context = {
-		'form':form,
+    """
+    Establishes the plant sign up form for notifications
+    Args:
+		request: An http GET request when a user would like
+		to access the page
+    Returns:
+		A redireaction to the form where a user can sign up for
+        reminder notifications
+    """
+    if request.method == 'POST':
+        form = PlantForm(request.POST)
+        if form.is_valid():
+            return redirect('index')
+    else:
+        form = PlantForm()
+    context = {
+        'form':form,
 	}
 
-	return render(request, 'plant_reminder.html', context)
+    return render(request, 'plant_reminder.html', context)
