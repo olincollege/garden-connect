@@ -9,7 +9,27 @@ plant = PlantInterest.get_plants_interest
 
 class WateringReminder:
     """
-    docstring
+    Attributes:
+        weekdays_to_water: list
+            A list of weekdays on which the plant needs to be watered.
+        water_frequency: int
+            The number of times the plant needs to be watered in a week.
+        plant: str
+            The name of the plant whose watering needs to be reminded.
+        preferred_watering_time: int
+            The time at which the user prefers to receive notifications.
+        days_to_water: list
+            A list of weekdays on which the plant needs to be watered based on its watering frequency.
+
+    Methods:
+        time_tracker_hour()
+            Returns the current hour of the day.
+        time_tracker_weekday()
+            Returns the current day of the week.
+        time_to_water(chosen_plant, weekday)
+            Calculates on which days the chosen plant needs to be watered based on its watering frequency.
+        generate_message()
+            Generates a message to remind the user to water their plant at the preferred watering time.
     """
 
     # Dictionary of plants linked to the number of times they need to be checked per week
@@ -24,7 +44,9 @@ class WateringReminder:
 
     def __init__(self):
         """
-        A dictionary connetcing name of the plant to the amount of watering per week
+        Initializes the WateringReminder class instance by setting the
+        plant name, the preferred watering time, and
+        the days on which the plant needs to be watered based on its watering frequency.
         """
         self.weekdays_to_water = []
         self.water_frequency = 0
@@ -38,21 +60,37 @@ class WateringReminder:
 
     def time_tracker_hour(self):
         """
-        Docstring
+        Returns the current hour of the day as an integer.
         """
         hour = self._now.strftime("%H")
         return int(hour)
 
+    def time_tracker_minute(self):
+        """
+        Returns the current minute of the day as an integer.
+        """
+        minute = self._now.strftime("%M")
+        return int(minute)
+
     def time_tracker_weekday(self):
         """
-        Docstring
+        Returns the current day of the week as an integer (Monday = 0, Sunday = 6).
         """
         weekday = self._now.weekday()
         return weekday  # day of the week 0 being Monday and 6 being Sunday
 
     def time_to_water(self, chosen_plant, weekday):
         """
-        Calculate on which days to water
+        Calculates on which days the chosen plant needs to be watered based on its watering frequency.
+
+        Parameters:
+            chosen_plant (str):
+                The name of the plant whose watering frequency is to be checked.
+            weekday (int):
+                The current day of the week (Monday = 0, Sunday = 6).
+
+        Returns:
+            list: A list of weekdays on which the plant needs to be watered based on its watering frequency.
         """
         if self._plant_water_per_week[chosen_plant] == 1:
             self.weekdays_to_water.append(weekday)
@@ -121,9 +159,14 @@ class WateringReminder:
 
     def generate_message(self):
         """
+<<<<<<< HEAD
+        Generates a message to be prited to remimd user to water their plant
+=======
         Outputs a formatted message for appropriate conditioning
         of a plant
+>>>>>>> 5142219da7458b77b3fd93c19bfc583647b05ce4
         """
         if self.time_tracker_weekday() in self.days_to_water:
             if self.time_tracker_hour() == self.preferred_watering_time:
-                print(f"It's time to check your {self.plant}.")
+                if self.time_tracker_minute() == 0:
+                    print(f"It's time to check your {self.plant}.")
