@@ -47,7 +47,7 @@ python manage.py migrate
 ```
 python manage.py migrate --run-syncdb
 ```
-* Then use the following command
+* Then use the following command:
 ```
 python manage.py runserver
 ```
