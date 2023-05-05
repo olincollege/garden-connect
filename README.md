@@ -54,6 +54,6 @@ python manage.py runserver
 * A local IP address should load where you may copy it and paste it into your web browser
 * You are now free to use Garden Connect in whatever way you may feel like it!
 
-If you would like to learn more about the mission and drive of Garden Connect, feel free to check out our website explaining the puporse of our project [https://kla-pie.github.io/garden-connect/](https://kla-pie.github.io/garden-connect/). Happy Gardening!
+If you would like to learn more about the mission and drive of Garden Connect, feel free to check out our website explaining the puporse of our project [https://olincollege.github.io/garden-connect-app/](https://olincollege.github.io/garden-connect-app/). Happy Gardening!
 
 If you have any questions, please feel free to reach out to Solomiia Kachur (skachur@olin.edu) or Kevin Lie-Atjam (klieatjam@olin.edu)
