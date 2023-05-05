@@ -30,16 +30,14 @@
 				<section id="banner">
 					<div class="content">
 						<header>
-							<h1>Become the best gardener that you can be</h1>
+							<h1>Welcome to Garden Connect</h1>
 						</header>
-						<p>Whether you’re tired of running to the store for tomatoes or want to grow flowers to beautify
-							your home, there are many benefits to learning how to garden. Proper tactics for nurturing
-							plant life can save you time and money, and also become a highly-enjoyable hobby. If you’re
-							starting with nothing, you may ask, “How can I learn gardening?” It does not require any
-							special kind of person — just practice, supplies, and knowledge. </p>
-						<ul class="actions">
-							<li><a href="connect.html" class="button big">Connect me!</a></li>
-						</ul>
+						<p>The idea of the project was to create a website where people interested in gardening would be
+							able to connect and be supported by other community members. In addition we wanted a website
+							to host some useful information for the beginner gardeners on how to start growing their
+							very own plants. The features on our website include: plant information pages, ability to
+							create posts, ability to communicate with other users who create the website and
+							notifications feature which would remind users to water their plants. </p>
 					</div>
 					<span class="image object">
 						<img src="images/Intro.jpg" alt="" />
@@ -49,39 +47,20 @@
 				<!-- Section -->
 				<section>
 					<header class="major">
-						<h2>How it works</h2>
+						<h2>Basic Code Structure</h2>
 					</header>
 					<div class="features">
 						<article>
 							<span class="icon fa-gem"></span>
 							<div class="content">
-								<h3>Growth education</h3>
-								<p>We provide you with modern gardening techniques to help you in sucessfully growing as
-									many crops as you possibly can in your garden.</p>
-							</div>
-						</article>
-						<article>
-							<span class="icon solid fa-paper-plane"></span>
-							<div class="content">
-								<h3>Connection to farmers</h3>
-								<p>We connect you with farmers in your local area to help you obtain information on how
-									to best care for your crops within your area.</p>
-							</div>
-						</article>
-						<article>
-							<span class="icon solid fa-rocket"></span>
-							<div class="content">
-								<h3>Reminding systems</h3>
-								<p>Set your the time when you planted a crop as well as the crop you planted, and we
-									will send you reminders to monitor your crops.</p>
-							</div>
-						</article>
-						<article>
-							<span class="icon solid fa-signal"></span>
-							<div class="content">
-								<h3>Crop review</h3>
-								<p>Had any trouble growing a seedling? Hear from people within the community to hear
-									what seedlings were the most and least successful to grow.</p>
+								<p>The code is build to be modular therefore each function has its own MVC with a folder
+									allocated to each feature of the website. When feature folder is open some common
+									files can be found such as:</p>
+
+								<p><strong>urls.py</strong> - list routes URLs to views</p>
+								<p><strong>views.py</strong> - creates a view canvas for each of the features</p>
+								<p><strong>models.py</strong> - which establishes a model for each of the functions
+								</p>
 							</div>
 						</article>
 					</div>
@@ -90,105 +69,75 @@
 				<!-- Section -->
 				<section>
 					<header class="major">
-						<h2>Maximize your growth</h2>
+						<h2>Website Interface</h2>
 					</header>
 					<div class="posts">
 						<article>
-							<a href="basil.html" class="image"><img src="images/basil.jpg" alt="" /></a>
-							<h3>Basil</h3>
-							<p>Basil is a low-maintenance, tasty herb that can flourish in even a small pot! Make sure
-								to cut the flowers to give more energy to the leaves , and also make sure to not
-								overwater it! Basil doesn't like constantly having wet roots.</p>
-							<ul class="actions">
-								<li><a href="basil.html" class="button">More</a></li>
-							</ul>
+							<a href="#" class="image"><img src="images/W1.png" alt="" /></a>
+							<h3>Plant Information Pages</h3>
+							<p>Pages that host text information on how to plant and take care of certain plants can all
+								be found under the `garden-connect` folder . Each page simply displays the text with
+								useful tips on how to plant and take care of plants. </p>
 						</article>
 						<article>
-							<a href="cucumber.html" class="image"><img src="images/cucumber.jpg" alt="" /></a>
-							<h3>Cucumbers</h3>
-							<p>Cucumbers are a fun crop to incorporate in your garden or simply in large pots. There are
-								two main types of cucumbers, vining and bush cucumbers, both of which consistently grow
-								cucumbers throughout the entire growing season. If you're growing a vining variety, make
-								sure to also buy a trellis (or grow it near a slotted fence!) for it to grow on, but
-								bush varieties should probably be planted in actual garden beds. Make sure to regularly
-								harvest the cucumbers and water them frequently, but there are tons of different ways
-								you'll be able to use them!
+							<a href="#" class="image"><img src="images/W2.png" alt="" /></a>
+							<h3>Posts</h3>
+							<p>Post creation feature allows each user to generate posts where they can display their
+								garden’s progress. This feature uses “Basic Code Structure” in addition to `admin.py`,
+								`apps.py` and `forms.py`
+
+							<p><strong>`admin.py`</strong> - imports items from posting function</p>
+							<p><strong>`apps.py`</strong> - establishes posting protocol</p>
+							<p><strong>`forms.py`</strong> - creates a form where users can create new posts</p>
+
 							</p>
-							<ul class="actions">
-								<li><a href="cucumber.html" class="button">More</a></li>
-							</ul>
 						</article>
 						<article>
-							<a href="jalapenos.html" class="image"><img src="images/jalapenoes.jpeg" alt="" /></a>
-							<h3>Jalapenos</h3>
-							<p>Jalapenos are a great crop that can add a little spice to your summertime dishes! Only
-								needing a pot or two, jalapenos love the heat and actually prefer being a bit dry, so
-								they are relatively low maintenance and are just fun, versatile plants!
+							<a href="#" class="image"><img src="images/W3.png" alt="" /></a>
+							<h3>Comment</h3>
+							<p>Comment feature allows users to generate comments under other user’s posts. This feature
+								uses “Basic Code Structure” in addition to `admin.py` and `forms.py`
+
+							<p><strong>`admin.py`</strong> - registers a comment interface for Garden Connect Users</p>
+							<p><strong>`forms.py`</strong> - creates a form where users create new comments</p>
+
 							</p>
-							<ul class="actions">
-								<li><a href="jalapenos.html" class="button">More</a></li>
-							</ul>
 						</article>
 						<article>
-							<a href="oregano.html" class="image"><img src="images/oregano.jpg" alt="" /></a>
-							<h3>Oregano</h3>
-							<p>Oregano is a delicious herb that can be used in a variety of dishes! It's a very low
-								maintenance plant that doesn't need much water or care, and you only need one or two
-								pots to have more than enough for any meal. Keep it in a well-lit area and occasionally
-								pinch off the flower buds but other than that, just plant and enjoy having a tasty herb!
+							<a href="#" class="image"><img src="images/W4.png" alt="" /></a>
+							<h3>Direct</h3>
+							<p>Direct:
+								Direct messaging enables users to send direct messages to each other on the app. This
+								feature uses “Basic Code Structure” in addition to `admin.py`
+
+							<p><strong>`admin.py`</strong> - registers a direct messaging interface for Garden Connect
+								users</p>
+
 							</p>
-							<ul class="actions">
-								<li><a href="oregano.html" class="button">More</a></li>
-							</ul>
 						</article>
 						<article>
-							<a href="rosemary.html" class="image"><img src="images/rosemary.jpeg" alt="" /></a>
-							<h3>Rosemary</h3>
-							<p>Rosemary is a delicious herb that is a staple in tons of dishes, marinades, and
-								seasonings. Like most herbs, it doesn't really require any maintenance and only needs a
-								bit of water. Said to help strengthen memory, plant it in a pot or two and enjoy plenty
-								of tasty rosemary!
+							<a href="#" class="image"><img src="images/W5.png" alt="" /></a>
+							<h3>Notifications</h3>
+							<p>This feature generates and sends notifications to users who filled out plant interest
+								surveys. The notification feature uses “Basic Code Structure” described above in
+								addition to some additional functions such as `watering.py`, `plant_interest survey.py`
+								and `forms.py`
+
+							<p><strong>`watering.py`</strong> - generates the notification message</p>
+							<p><strong>`plant_interest.py`</strong> - asks for user input such as what plant are they
+								interested in and
+								which hour is the best for them to receive a notification at</p>
+							<p><strong>`forms.py`</strong> - creates a form where users create new plant reminders</p>
+
 							</p>
-							<ul class="actions">
-								<li><a href="rosemary.html" class="button">More</a></li>
-							</ul>
 						</article>
+
 						<article>
-							<a href="thyme.html" class="image"><img src="images/thyme.jpg" alt="" /></a>
-							<h3>Thyme</h3>
-							<p>Thyme is a tasty herb that is easy to grow and produces tons of leaves that can be used
-								in plenty of seasonings! It doesn't need too much more, and basically needs no
-								maintenance after planting, but plant a pot or two to enjoy a consistent supply of
-								delicious thyme!
+							<a href="#" class="image"><img src="images/tomatoes.jpeg" alt="" /></a>
+							<h3>Media</h3>
+							<p>Contains all the media information associated with a certain user, such as posts, profile
+								images, etc.
 							</p>
-							<ul class="actions">
-								<li><a href="thyme.html" class="button">More</a></li>
-							</ul>
-						</article>
-						<article>
-							<a href="tomatoes.html" class="image"><img src="images/tomatoes.jpeg" alt="" /></a>
-							<h3>Tomatoes</h3>
-							<p>Tomatoes are a staple in any summer garden. With tons of varieties, tomatoes are a
-								versatile crop that come in tons of different sizes, flavors, and even colors! While you
-								should spend time researching which variety works best for what you want, no matter
-								which variety you get, make sure they stay well watered and have at least a couple of
-								square feet in the sun so that they produce as much as possible!
-							</p>
-							<ul class="actions">
-								<li><a href="tomatoes.html" class="button">More</a></li>
-							</ul>
-						</article>
-						<article>
-							<a href="lettuce.html" class="image"><img src="images/lettuce_1.jpg" alt="" /></a>
-							<h3>Lettuce</h3>
-							<p>Water: medium. maintenance: low. sun: 6-8 direct. space, 20+ square feet
-								Lettuce is a great summertime crop that requires a bit of space but is easy to grow and
-								can be a great part of tons of fresh recipes! Pests can be a problem, so make sure you
-								choose a variety that is pest resistant and make sure that you have raised bed gardens
-								or a fence to keep out rabbits and other rodents!</p>
-							<ul class="actions">
-								<li><a href="lettuce.html" class="button">More</a></li>
-							</ul>
 						</article>
 					</div>
 				</section>
@@ -200,13 +149,6 @@
 		<div id="sidebar">
 			<div class="inner">
 
-				<!-- Search -->
-				<section id="search" class="alt">
-					<form method="post" action="#">
-						<input type="text" name="query" id="query" placeholder="Search" />
-					</form>
-				</section>
-
 				<!-- Menu -->
 				<nav id="menu">
 					<header class="major">
@@ -214,46 +156,42 @@
 					</header>
 					<ul>
 						<li><a href="index.html">Homepage</a></li>
-						<li><a href="connect.html">Connect with local farmers</a></li>
-						<li>
-							<span class="opener">Crop catalog</span>
-							<ul>
-								<li><a href="basil.html">Basil</a></li>
-								<li><a href="cucumber.html">Cucumbers</a></li>
-								<li><a href="jalapenos.html">Jalapenos</a></li>
-								<li><a href="lettuce.html">Lettuce</a></li>
-								<li><a href="oregano.html">Oregano</a></li>
-								<li><a href="rosemary.html">Rosemary</a></li>
-								<li><a href="thyme.html">Thyme</a></li>
-								<li><a href="tomatoes.html">Tomatoes</a></li>
-							</ul>
-						</li>
-						<li><a href="reminders.html">Reminders</a></li>
 					</ul>
 				</nav>
 
 				<!-- Section -->
 				<section>
 					<header class="major">
-						<h2>Latest Reviews</h2>
+						<h2>Usage Instructions</h2>
 					</header>
 					<div class="mini-posts">
 						<article>
-							<a href="#" class="image"><img src="images/lettuce.jpg" alt="" /></a>
-							<p>"I planted this lettuce on the 17th last month. I wouldn't recommend these seeds as the
-								heads were very small." (2/5 stars) - Terry J.</p>
+							<a href="https://github.com/olincollege/garden-connect-app" class="image"><img
+									src="images/I1.png" alt="" /></a>
+							<p>Accessing and installing Garden Connect can be accomplished by clicking on the photo</p>
 						</article>
 						<article>
-							<a href="#" class="image"><img src="images/garlic.jpg" alt="" /></a>
-							<p>"Just harvested my garlic yesterday and I couldn't ask for better! I highly recommend
-								giving your spouts about half a cup of water every day." (5/5 stars) - Jesse K.</p>
+							<a href="https://drive.google.com/file/d/1ik0MBLVJfrUXvxmCs4wHwmYafjH_xmU-/view?usp=sharing"
+								class="image"><img src="images/I2.png" alt="" /></a>
+							<p>Would you like to see how Garden Connect works? Click on this photo to watch our
+								infomrational video</p>
+						</article>
+					</div>
+				</section>
+
+				<section>
+					<header class="major">
+						<h2>Who are we?</h2>
+					</header>
+					<div class="mini-posts">
+						<article>
+							<a href="https://github.com/skachurolin" class="image"><img src="images/P1.png"
+									alt="" /></a>
+							<p>Solomiia Kachur on GitHub</p>
 						</article>
 						<article>
-							<a href="#" class="image"><img src="images/watermelon.jpg" alt="" /></a>
-							<p>"I grew my heart shaped watermelons and they were delicious. They came out small, but you
-								can always grow the watermelons without the case if you'd like them bigger." (4/5 stars)
-								- Beatrice F.
-							</p>
+							<a href="https://github.com/KLA-pie" class="image"><img src="images/P2.png" alt="" /></a>
+							<p>Kevin Lie-Atjam on GitHub</p>
 						</article>
 					</div>
 				</section>
